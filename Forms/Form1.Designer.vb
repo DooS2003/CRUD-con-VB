@@ -33,6 +33,7 @@ Partial Class Form1
         Me.Button_guardar = New System.Windows.Forms.Button()
         Me.Button_modificar = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button_delete = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -139,12 +140,22 @@ Partial Class Form1
         Me.Button1.Text = "Listar"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Button_delete
+        '
+        Me.Button_delete.Location = New System.Drawing.Point(261, 270)
+        Me.Button_delete.Name = "Button_delete"
+        Me.Button_delete.Size = New System.Drawing.Size(77, 29)
+        Me.Button_delete.TabIndex = 5
+        Me.Button_delete.Text = "Eliminar"
+        Me.Button_delete.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkSlateGray
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button_delete)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button_modificar)
         Me.Controls.Add(Me.Button_guardar)
@@ -170,4 +181,5 @@ Partial Class Form1
     Friend WithEvents Button_guardar As Button
     Friend WithEvents Button_modificar As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button_delete As Button
 End Class

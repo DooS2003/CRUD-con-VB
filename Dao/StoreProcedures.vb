@@ -43,6 +43,40 @@ Public Class StoreProcedures
         Return tabla
     End Function
 
+    Public Sub EliminarJugos(Codigo As String)
+        Try
+            conexion.abrir()
+            Dim cmd As String = "SP_eliminarJugo"
+            Using comando As New SqlCommand(cmd, conexion.conectarbd)
+                comando.CommandType = CommandType.StoredProcedure
+                comando.Parameters.AddWithValue("@codigo", Codigo)
+                comando.ExecuteNonQuery()
+            End Using
+        Catch ex As Exception
+            Throw New Exception("Error al eliminar el jugo" + ex.Message)
+        Finally
+            conexion.cerrar()
+        End Try
+    End Sub
+
+    Public Sub ModificarJugos(Codigo As String, marca As String, sabor As String)
+        Try
+            conexion.abrir()
+            Dim cmd As String = "SP_modificarJugo"
+            Using comando As New SqlCommand(cmd, conexion.conectarbd)
+                comando.CommandType = CommandType.StoredProcedure
+                comando.Parameters.AddWithValue("@codigo", Codigo)
+                comando.Parameters.AddWithValue("@marca", marca)
+                comando.Parameters.AddWithValue("@sabor", sabor)
+                comando.ExecuteNonQuery()
+            End Using
+        Catch ex As Exception
+            Throw New Exception("Error al insertar el jugo" + ex.Message)
+        Finally
+            conexion.cerrar()
+        End Try
+    End Sub
+
 
 
 End Class
